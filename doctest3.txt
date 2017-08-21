@@ -1,0 +1,12 @@
+Here we use doctest's exception syntax to check that Python is correctly enforcing its grammar.
+The error is a missing ) on the def line.
+The doctest module
+deals with this by ignoring the traceback entirely: it's only concerned with the first
+line, Traceback (most recent call last):, which tells it that you expect an
+exception, and the part after the traceback, which tells it which exception you expect.
+The doctest module only reports a failure if one of these parts does not match.
+
+>>> def faulty(:
+...     yield from [1,2,3,4,5]
+Traceback (most recent call last):
+SyntaxError: invalid syntax

@@ -1,0 +1,16 @@
+Next up, we're exploring the ellipsis.
+
+>>> import sys
+>>> sys.modules # doctest: +ELLIPSIS
+{...'sys': <module 'sys' (built-in)>...}
+
+>>> 'This is an expression that evaluates to a string'
+... # doctest: +ELLIPSIS
+'This is ... a string'
+
+>>> 'This is also a string' # doctest: +ELLIPSIS
+'This is ... a string'
+
+>>> import datetime
+>>> datetime.datetime.now().isoformat() # doctest: +ELLIPSIS
+'...-...-...T...:...:...'
