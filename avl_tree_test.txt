@@ -1,0 +1,48 @@
+>>> from avl_tree import AVL
+
+>>> def valid_state(node):
+...     if node is None:
+...         return
+...     if node.left is not None:
+...         assert isinstance(node.left, AVL)
+...         assert node.left.key < node.key
+...         left_height = node.left.height + 1
+...     else:
+...         left_height = 0
+...
+...     if node.right is not None:
+...         assert isinstance(node.right, AVL)
+...         assert node.right.key > node.key
+...         right_height = node.right.height + 1
+...     else:
+...         right_height = 0
+...
+...     assert abs(left_height - right_height) < 2
+...     node.key < node.key
+...     node.value
+
+>>> def valid_tree(node):
+...     if node is None:
+...         return
+...     valid_state(node)
+...     valid_tree(node.left)
+...     valid_tree(node.right)
+
+>>> valid_state(AVL(2, 'Testing is fun'))
+
+>>> valid_tree(AVL({1: 'Hello', 2: 'World', -3: '!'}))
+
+>>> def make_test_tree():
+...     root = AVL(7, 'seven')
+...     root.height = 2
+...     root.left = AVL(3, 'three')
+...     root.left.height = 1
+...     root.left.right = AVL(4, 'four')
+...     root.right = AVL(10, 'ten')
+...     return root
+
+>>> tree = make_test_tree()
+>>> tree.height = 0
+>>> tree.recalculate_height()
+>>> tree.height
+2

@@ -3,4 +3,4 @@ This is a simple doctest that checks some of Python's arithmetic operations.
 4
 
 >>> 3*3
-10
+9

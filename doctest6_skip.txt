@@ -1,0 +1,4 @@
+Now we're telling doctest to skip a test
+
+>>> 'This test would fail.' # doctest: +SKIP
+if it were allowed to run.
